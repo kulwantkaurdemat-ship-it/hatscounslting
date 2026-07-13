@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zero Work Invest – Premium Learning Community</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: radial-gradient(circle at top, #0a0f1f, #000);
+    color:#fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+    padding:40px 20px;
+  }
+  .card {
+    max-width:480px;
+    width:100%;
+    text-align:center;
+  }
+  .logo {
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 40px rgba(0,200,255,0.5);
+  }
+  h1 {
+    margin-top:15px;
+    font-size:32px;
+    background:linear-gradient(90deg,#00c6ff,#a37bff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .tabs {
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    border-bottom:1px solid #223;
+    margin:25px 0;
+    padding-bottom:12px;
+    font-size:14px;
+    color:#4dd0ff;
+    flex-wrap:wrap;
+  }
+  .feature {
+    background:#0d1626;
+    border:1px solid #1d2b45;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:14px;
+    font-size:16px;
+  }
+  .cta {
+    display:block;
+    background:linear-gradient(90deg,#00c6ff,#a37bff);
+    color:#000;
+    font-weight:bold;
+    font-size:18px;
+    text-decoration:none;
+    padding:16px;
+    border-radius:14px;
+    margin:25px 0;
+    box-shadow:0 0 25px rgba(0,200,255,0.5);
+  }
+  .timer-box {
+    background:#120a24;
+    border:1px solid #3a2560;
+    border-radius:12px;
+    padding:18px;
+    font-size:14px;
+    color:#c9a3ff;
+  }
+  .timer-box .num {
+    font-size:34px;
+    font-weight:bold;
+    color:#fff;
+  }
+  .disclaimer {
+    margin-top:25px;
+    font-size:11px;
+    color:#666;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img src="logo.png" alt="logo" class="logo">
+  <h1>Zero Work Invest</h1>
+
+  <div class="tabs">
+    <span>📢 Latest Updates</span>
+    <span>⚡ Instant Notifications</span>
+    <span>🔒 Private Access</span>
+  </div>
+
+  <div class="feature">🔒 Private channel access</div>
+  <div class="feature">📊 Regular content updates</div>
+  <div class="feature">✨ Simple user experience</div>
+
+  <a id="ctaBtn" class="cta" href="#">Join Telegram Channel</a>
+
+  <div class="timer-box">
+    ⏳ LIMITED TIME ACCESS CLOSING IN<br>
+    <span class="num" id="timer">05</span> sec
+  </div>
+
+  <p class="disclaimer">
+    Disclaimer: Information shared is for general knowledge and educational use only. We are not responsible for any decisions made by users. Kindly proceed with proper research and responsibility.
+  </p>
+</div>
+
+<script>
+  const telegramLink = "https://t.me/Zeroworkinvestn?text=" + encodeURIComponent("yes i am intrested");
+  document.getElementById("ctaBtn").href = telegramLink;
+
+  let seconds = 5;
+  const timerEl = document.getElementById("timer");
+  let redirected = false;
+
+  function redirectNow() {
+    if (redirected) return;
+    redirected = true;
+    window.location.href = telegramLink;
+  }
+
+  const countdown = setInterval(() => {
+    seconds--;
+    timerEl.textContent = seconds.toString().padStart(2, "0");
+    if (seconds <= 0) {
+      clearInterval(countdown);
+      redirectNow();
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
